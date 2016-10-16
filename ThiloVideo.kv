@@ -1,0 +1,35 @@
+<Label>:
+    font_name: 'Roboto'
+    font_size: 35
+    markup: True
+
+<RobotoButton@Button>:
+    font_name: 'Roboto'
+    font_size: 25
+    bold: True
+    background_normal: 'button_normal.png'
+    background_down: 'button_down.png'
+    border: (2, 2, 2, 2)
+
+<MenuScreen>:
+    BoxLayout:
+
+    	
+        Button:
+            text: 'Goto settings'
+            on_press: root.manager.current = 'settings'
+            valign: 'middle'
+            size_hint: .2, .3
+            
+        Video:
+        	source: "http://192.168.1.199/mjpg/1/video.mjpg" 
+        	state: 'play'
+        	options: {'allow_stretch': True}
+  
+<SettingsScreen>:
+    BoxLayout:
+        Button:
+            text: 'My settings button'
+        Button:
+            text: 'Back to menu'
+            on_press: root.manager.current = 'menu'
